@@ -1,0 +1,727 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* VARIAVEIS DE COR */
+:root {
+  /* --cinza-hover: #95a1a1; */
+  --fundo-hover: rgba(250, 243, 221);
+  --fundo-nav: rgb(29, 51, 84); 
+  --fundo-main: #faf3dd;
+  --fundo-task-feita: #069039;
+}
+
+
+body {
+  background-color: #dedede;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.caixa{
+  width: 100%;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.nav {
+  background-color: var(--fundo-nav);
+  height: 100vh;
+  width: 280px;
+  display: flex;
+  padding: 15px;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.header {
+  width: 260px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-family: "Poppins";
+  font-weight: 500;
+  justify-content: space-between;
+}
+
+.perfil {
+  width: 120px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-family: "Poppins";
+  font-weight: 500;
+  border-radius: 10px;
+  gap: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+
+  img {
+    margin-left: 10px;
+  }
+}
+
+.perfil:hover {
+  background-color: var(--fundo-hover);
+  transition: background-color 0.7s ease;
+  color: #000;
+}
+
+.icones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: gray;
+  transition: background-color 0.7s ease, color 0.7s ease;
+  
+}
+
+.icones:hover {
+  background-color: var(--fundo-hover);
+  color: black;
+}
+
+#icon-aba {
+  font-size: 30px;
+}
+
+#icon-aba:hover{
+  color: black;
+}
+
+.icon-aba {
+  width: 34px;
+  height: 34px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  transition: transform 0.5s;
+  color: white;
+}
+
+/* ADICIONAR TAREFA */
+.add-task {
+  display: flex;
+  align-items: center;
+  width: 250px;
+}
+
+.btn-add-task {
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  background-image: url('./src/icon-add-task.png');
+  background-size: cover;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  /*COR DE FUNDO TRANSPARENTE */
+
+}
+
+.input-task {
+  border: solid 3px rgb(184, 242, 230);
+  padding: 5px;
+  border-radius: 13px;
+  width: 200px;
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+/* FOOTER */
+.footer,
+a {
+  width: 250px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  font-family: "Poppins";
+  font-weight: 600;
+  gap: 5px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.7s ease, color 0.7s ease;
+  text-decoration: none;
+}
+
+.footer:hover {
+  color: black;
+  background-color: var(--fundo-hover);
+}
+
+#icon-config {
+  font-size: 15px;
+  margin-left: 10px;
+}
+/* ---------------- BARRA DE PESQUISA ---------------- */
+   .container-search{
+      height: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .box{
+    max-width: 400px;
+    width: 100%;
+   }
+
+   .search-box{
+    position: relative;
+    height: 50px;
+    max-width: 50px;
+    margin: auto;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    transition: max-width 0.5s ease-in-out, padding-left 0.5s ease-in-out;
+   }
+
+   #check:checked ~ .search-box{
+    max-width: 380px;
+   }
+
+   #check{
+    display: none;
+   }
+
+   .search-box input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    background-color: white;
+    outline: none;
+    border: none;
+    padding-left: 25px;
+    font-size: 18px;
+   }
+
+   .search-box .icon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    background-color: #FE5E41;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    padding: 10px;
+   }
+/* ---------------- MAIN ----------------- */
+
+.main {
+  width: 100%;
+  padding: 25px;
+  font-family: "Poppins";
+  font-weight: 400;
+  overflow: hidden;
+  flex-direction: column;
+  /* overflow-y: scroll; */
+}
+
+.container {
+  background-color: var(--fundo-nav);
+  max-width: 1000px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px auto 0;
+}
+
+.list-task {
+  width: 100%;
+  list-style: none;
+  margin-top: 30px;
+}
+
+.task {
+  background-color: #f2f2f2;
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 0 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  min-height: 50px;
+
+  img {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+}
+.p-task{
+  margin-left: 10px;
+}
+
+.btn-important {
+  /* width: 0;
+  height: 0;
+  font-size: 0; */
+  display: flex;
+  margin: 10px auto;
+  padding: 5px 10px; 
+  background-color: #ffcc00; 
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer; 
+  font-size: 14px;
+  opacity: 0;
+}
+
+.btn-important:hover {
+  background-color: #ffc107; /* Altera a cor ao passar o mouse */
+}
+
+.task:hover .btn-important{
+  opacity: 1;
+}
+
+.task:hover img {
+  opacity: 1;
+}
+
+.done {
+  background-color: var(--fundo-task-feita);
+  color: white;
+  text-decoration: line-through;
+}
+
+/* --------------- RESPONSIVIDADE MOBILE --------------- */
+
+@media (max-width: 700px) {
+  #id-nav.nav {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  #id-nav.navDark {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .header {
+    width: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-family: "Poppins";
+    font-weight: 500;
+    justify-content: space-between;
+  }
+
+  .caixa {
+    overflow: hidden;
+    overflow-y: none;
+  }
+
+  .footer {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    p{
+      font-size: 0;
+    }
+  }
+
+  .footer:hover {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .icones {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .input-task {
+    border: solid 3px #80b0ab;
+    padding: 5px;
+    border-radius: 13px;
+    max-width: 50%;
+    font-family: "Poppins";
+    font-weight: 500;
+  }
+
+  .add-task {
+    display: flex;
+    align-items: center;
+    max-width: 50%;
+    flex-direction: row-reverse;
+  }
+}
+
+@media (max-width: 450px){
+  .header {
+    width: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-family: "Poppins";
+    font-weight: 500;
+    justify-content: space-between;
+
+    p{
+      font-size: 0;
+    }
+  }
+}
+
+
+/* ------------------------MINIMIZAR A NAV---------------------- */
+
+.minimizado {
+  height: 100vh;
+  width: 55px;
+  overflow: hidden;
+  background-color: var(--fundo-nav);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .header {
+    height: 200px;
+    width: 55px;
+    margin-top: 20px;
+    align-items: center;
+    flex-direction: column-reverse;
+    overflow: hidden;
+
+    .perfil {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .icones {
+      transform: rotate(180deg);
+      transition: transform 0.5s;
+    }
+
+    #icon-aba:hover{
+      color: black;
+    }
+  }
+
+  .footer {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.7s ease, color 0.7s ease;
+  }
+
+  p {
+    font-size: 0;
+  }
+
+  .add-task {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+}
+
+/* -------------------------- MODO DARK POP UP ----------------- */
+.popup {
+  display: none;
+  /* Esconder o pop-up no começo */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupContent {
+  width: 400px;
+  height: 200px;
+  border: 3px solid #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(125, 134, 156);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+
+  h1 {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: auto;
+  }
+}
+
+.close {
+  cursor: pointer;
+  float: right;
+  font-size: 34px;
+}
+
+/* ---------------------------------- BOTAO MODO DARK --------------------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffea;
+  transition: background 0.2s linear;
+}
+
+body.dark {
+  background-color: #292c35;
+}
+
+.navDark {
+  background-color: #1d1e1e;
+  color: white;
+  padding: 15px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 100vh;
+  width: 280px;
+  display: flex;
+
+  #icon-aba {
+    color: white;
+  }
+
+  #icon-aba:hover{
+    color: black;
+  }
+
+  .footer {
+    color: white;
+  }
+
+  .footer:hover{
+    color: black;
+  }
+}
+
+.navDarkMinimizado {
+  height: 100vh;
+  width: 55px;
+  overflow: hidden;
+  background-color: #1d1e1e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .add-task {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    padding: 0;
+
+    .input-task {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .header {
+    height: 200px;
+    width: 55px;
+    margin-top: 20px;
+    align-items: center;
+    flex-direction: column-reverse;
+    overflow: hidden;
+
+    .perfil {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+
+  #icon-aba {
+    color: white;
+  }
+
+  #icon-aba:hover{
+    color: black;
+  }
+
+  .footer {
+    color: white;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.7s ease, color 0.7s ease;
+  }
+
+  p {
+    font-size: 0;
+  }
+
+  .icones {
+    transform: rotate(180deg);
+    transition: transform 0.5s;
+  }
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: #111;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5px;
+  position: relative;
+  height: 26px;
+  width: 50px;
+  transform: scale(1.5);
+
+}
+
+
+.label .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.label .ball {
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+/* --------- */
+.task.important {
+  background-color: #ffeb3b;
+  border-left: 5px solid #f44336; 
+  color: black;
+}
+
+
+
+
+
